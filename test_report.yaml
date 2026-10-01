@@ -1,0 +1,20 @@
+baseline:
+  command: node --check app.js
+  result: pass
+  notes:
+    - Repository has no automated test suite.
+    - glob("**/*test*") found no test files.
+
+slice_verification:
+  - todo_id: dark-mode-toggle
+    verify_command: node --check app.js
+    result: pass
+    acceptance_coverage:
+      - Visible theme toggle implemented in index.html and styled in style.css.
+      - Theme preference is persisted with localStorage in app.js.
+      - Existing login and gallery reveal flow remains present alongside the new theme logic.
+
+manual_checks:
+  - Open index.html in a browser and confirm the theme toggle switches between light and dark presentation.
+  - Refresh the page and confirm the last selected theme persists.
+  - Confirm login still hides the form and reveals the gallery for valid existing credentials.

@@ -1,0 +1,17 @@
+todos:
+  - id: dark-mode-toggle
+    content: Add a persistent dark mode toggle to the existing static login/gallery page.
+    scope: S
+    files:
+      - index.html
+      - style.css
+      - app.js
+      - README.md
+      - test_report.yaml
+      - CHANGELOG.md
+    acceptance:
+      - A visible in-page control allows the user to switch between light and dark themes.
+      - The selected theme persists across page reloads using browser storage.
+      - The login form and gallery remain usable and visually coherent in both themes.
+    verify: node --check app.js
+    status: pending
