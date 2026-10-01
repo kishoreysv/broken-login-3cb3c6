@@ -15,8 +15,14 @@ Open `index.html` in a browser, or serve the folder with any static file server.
 - The current demo credentials behavior still works, including the existing `bypass` username path.
 
 ## Verification
-Run the JavaScript syntax check:
+Run the automated unit tests:
 
 ```bash
-node --check app.js
+node node_modules/vitest/vitest.mjs run --config vitest.config.mjs
+```
+
+Run the browser E2E tests:
+
+```bash
+node node_modules/@playwright/test/cli.js test --config playwright.config.js
 ```

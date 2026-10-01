@@ -53,4 +53,16 @@ function attemptLogin() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', initializeTheme);
+if (typeof document !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', initializeTheme);
+}
+
+if (typeof module !== 'undefined') {
+    module.exports = {
+        THEME_STORAGE_KEY,
+        getPreferredTheme,
+        applyTheme,
+        initializeTheme,
+        attemptLogin
+    };
+}

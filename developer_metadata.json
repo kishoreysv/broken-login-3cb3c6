@@ -1,0 +1,48 @@
+{
+  "tech_stack": "HTML CSS JavaScript static",
+  "schema_version": "2.0",
+  "components": [
+    {
+      "role": "frontend",
+      "root": ".",
+      "test": {
+        "working_directory": ".",
+        "command": ["node", "node_modules/vitest/vitest.mjs", "run", "--config", "vitest.config.mjs"],
+        "requires_database": false
+      },
+      "runtime": {
+        "stack": "static",
+        "dockerfile": "",
+        "build_context": ".",
+        "build_command": ["node", "--check", "app.js"],
+        "start_command": ["node", "server.js"],
+        "container_port": 4173,
+        "bind_address": "127.0.0.1",
+        "health_path": "/",
+        "env_example_paths": []
+      }
+    }
+  ],
+  "codebase_path": ".",
+  "git_link": "https://github.com/kishoreysv/broken-login-3cb3c6",
+  "commit_sha": "5650adfd450e420310a7c5192a5d0c0838882469",
+  "push_branch": "brownfield/t0132pcjvcrtv000401102611062794",
+  "plan_path": "PLAN.md",
+  "plan_summary": "Enhanced the existing static login and gallery page with a persistent light/dark theme toggle. Added real automated Vitest unit coverage and Playwright E2E coverage while keeping the repository's simple HTML/CSS/JavaScript architecture and existing login/gallery workflow intact.",
+  "readme_path": "README.md",
+  "test_report_path": "test_report.yaml",
+  "tests_ran": true,
+  "unit_tests_passed": true,
+  "integration_tests_ran": false,
+  "api_tests_ran": false,
+  "e2e_tests_ran": true,
+  "commits_count": 1,
+  "run_mode": "external",
+  "changelog_path": "CHANGELOG.md",
+  "existing_tree_used": true,
+  "baseline_tests_ran": true,
+  "risk_assessed": true,
+  "pr_url": "",
+  "pr_number": "",
+  "warnings": []
+}

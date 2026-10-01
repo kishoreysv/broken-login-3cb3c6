@@ -14,4 +14,4 @@ todos:
       - The selected theme persists across page reloads using browser storage.
       - The login form and gallery remain usable and visually coherent in both themes.
     verify: node --check app.js
-    status: pending
+    status: done

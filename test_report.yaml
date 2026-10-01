@@ -2,8 +2,32 @@ baseline:
   command: node --check app.js
   result: pass
   notes:
-    - Repository has no automated test suite.
-    - glob("**/*test*") found no test files.
+    - Repository originally had no automated test suite.
+    - glob("**/*test*") found no test files before this revision.
+
+unit_tests:
+  command: node node_modules/vitest/vitest.mjs run --config vitest.config.mjs
+  result: pass
+  totals:
+    tests: 8
+    failures: 0
+  coverage:
+    - Theme preference resolution covers saved values and invalid storage fallback.
+    - Theme application covers dataset updates and toggle accessibility attributes.
+    - Theme initialization covers missing-toggle safety and persisted theme toggling.
+    - Login flow covers admin success, invalid credentials, and documented bypass behavior.
+
+e2e_tests:
+  command: node node_modules/@playwright/test/cli.js test --config playwright.config.js
+  result: pass
+  totals:
+    tests: 3
+    failures: 0
+  coverage:
+    - Initial pre-login state renders with login visible and gallery hidden.
+    - Theme toggle updates the page theme and persists across reload.
+    - Invalid login shows an error message.
+    - Successful login reveals the gallery content.
 
 slice_verification:
   - todo_id: dark-mode-toggle
@@ -12,9 +36,4 @@ slice_verification:
     acceptance_coverage:
       - Visible theme toggle implemented in index.html and styled in style.css.
       - Theme preference is persisted with localStorage in app.js.
-      - Existing login and gallery reveal flow remains present alongside the new theme logic.
-
-manual_checks:
-  - Open index.html in a browser and confirm the theme toggle switches between light and dark presentation.
-  - Refresh the page and confirm the last selected theme persists.
-  - Confirm login still hides the form and reveals the gallery for valid existing credentials.
+      - The login form and gallery remain usable and visually coherent in both themes.
